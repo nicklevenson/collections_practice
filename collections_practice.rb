@@ -45,13 +45,14 @@ def sum_array(array)
 end
 
 def add_s(array)
-    newArray = []
-    array.each do |word|
-        if array.index(word) != 1
-            newArray.push(word + "s")
-        else
-            newArray.push(word);
-        end
-    end
-    newArray
+    # newArray = []
+    # array.each do |word|
+    #     if array.index(word) != 1
+    #         newArray.push(word + "s")
+    #     else
+    #         newArray.push(word);
+    #     end
+    # end
+    # newArray
+    array.each_with_index.collect{|word, index| index == 1? word : word + "s"}
 end
